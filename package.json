@@ -1,12 +1,12 @@
 {
-  "name": "exit-intent",
-  "version": "1.1.0",
-  "description": "Exit intent detection library.",
+  "name": "exit-intent-quattro",
+  "version": "1.2.0",
+  "description": "Exit intent detection library - detects all 4 sides.",
   "keywords": [
     "exit",
     "intent"
   ],
-  "author": "Dan Hayden <dan@tutonics.com>",
+  "author": "Johnny Oshika",
   "license": "MIT",
   "main": "dist/exit-intent.js",
   "module": "dist/exit-intent.es.js",
@@ -69,10 +69,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danhayden/exit-intent.git"
+    "url": "git+https://github.com/johnnyoshika/exit-intent-quattro.git"
   },
   "bugs": {
-    "url": "https://github.com/danhayden/exit-intent/issues"
+    "url": "https://github.com/johnnyoshika/exit-intent-quattro/issues"
   },
-  "homepage": "https://github.com/danhayden/exit-intent#readme"
+  "homepage": "https://github.com/johnnyoshika/exit-intent-quattro#readme"
 }
