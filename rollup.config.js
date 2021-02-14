@@ -1,18 +1,19 @@
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import babel from 'rollup-plugin-babel'
-import uglify from 'rollup-plugin-uglify'
-import {minify} from 'uglify-es'
-import fs from 'fs'
-const pkg = JSON.parse(fs.readFileSync('./package.json'))
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel';
+import uglify from 'rollup-plugin-uglify';
+import { minify } from 'uglify-es';
+import fs from 'fs';
+const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
 export default {
   name: 'ExitIntent',
   input: 'src/exit-intent.js',
   output: [
-    {format: 'es', file: pkg.module},
-    {format: 'cjs', file: pkg.main},
-    {format: 'umd', file: pkg['umd:main']}
+    { format: 'es', file: pkg.module },
+    { format: 'es', file: pkg.types },
+    { format: 'cjs', file: pkg.main },
+    { format: 'umd', file: pkg['umd:main'] },
   ],
   plugins: [
     resolve(),
@@ -26,14 +27,14 @@ export default {
           {
             modules: false,
             loose: true,
-            targets: {browsers: ['last 2 versions', '> 1%']}
-          }
+            targets: { browsers: ['last 2 versions', '> 1%'] },
+          },
         ],
         'babel-preset-react',
-        'babel-preset-stage-2'
+        'babel-preset-stage-2',
       ],
-      plugins: ['external-helpers']
+      plugins: ['external-helpers'],
     }),
-    uglify({}, minify)
-  ]
-}
+    uglify({}, minify),
+  ],
+};
