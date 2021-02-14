@@ -7,7 +7,7 @@
 [![Size][size]](https://unpkg.com/exit-intent)
 [![Size gzip][size gzip]](https://unpkg.com/exit-intent)
 
-Exit Intent detection library based on [Dan Hayden](https://github.com/danhayden/exit-intent)'s original version. This library builds on top of the original version by adding edge detection on all 4 sides of the viewport instead of just the top.
+Exit Intent detection library based on [Dan Hayden](https://github.com/danhayden/exit-intent)'s original version. This library builds on top of the original version by adding edge detection on all 4 edges of the viewport instead of just the top.
 
 ## Usage
 
@@ -16,7 +16,7 @@ import exitIntent from 'exit-intent-quattro';
 
 // Initialise
 const removeExitIntent = exitIntent({
-  sides: {
+  edges: {
     top: true,
     right: true,
     bottom: true,
@@ -36,8 +36,8 @@ removeExitIntent();
 
 ### Options
 
-`sides` (default `{top: true, right: false, bottom: false, left: false}`)
-sides of the viewport that triggers exit intent.
+`edges` (default `{top: true, right: false, bottom: false, left: false}`)  
+edges of the viewport that triggers exit intent.
 
 `threshold` (default 20)  
 maximum distance in pixels from the top of the page to trigger.

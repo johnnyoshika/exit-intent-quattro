@@ -2,7 +2,7 @@ import throttle from 'lodash/throttle'
 
 export default function ExitIntent (options = {}) {
   const defaultOptions = {
-    sides: {top: true, right: false, bottom: false, left: false},
+    edges: {top: true, right: false, bottom: false, left: false},
     threshold: 20,
     maxDisplays: 1,
     eventThrottle: 200,
@@ -13,7 +13,7 @@ export default function ExitIntent (options = {}) {
     const config = {
       ...defaultOptions,
       ...options,
-      sides: {...defaultOptions.sides, ...options.sides}
+      edges: {...defaultOptions.edges, ...options.edges}
     }
     const eventListeners = new Map()
     let displays = 0
@@ -34,7 +34,7 @@ export default function ExitIntent (options = {}) {
 
     const shouldDisplay = (x, y) => {
       if (
-        config.sides.top &&
+        config.edges.top &&
         y <= config.threshold &&
         displays < config.maxDisplays
       ) {
@@ -43,7 +43,7 @@ export default function ExitIntent (options = {}) {
       }
 
       if (
-        config.sides.right &&
+        config.edges.right &&
         x >= viewportWidth() - config.threshold &&
         displays < config.maxDisplays
       ) {
@@ -52,7 +52,7 @@ export default function ExitIntent (options = {}) {
       }
 
       if (
-        config.sides.bottom &&
+        config.edges.bottom &&
         y >= viewportHeight() - config.threshold &&
         displays < config.maxDisplays
       ) {
@@ -61,7 +61,7 @@ export default function ExitIntent (options = {}) {
       }
 
       if (
-        config.sides.left &&
+        config.edges.left &&
         x <= config.threshold &&
         displays < config.maxDisplays
       ) {
