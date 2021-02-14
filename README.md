@@ -1,4 +1,4 @@
-# Exit Intent
+# Exit Intent Quattro
 
 [![version][version]](http://npm.im/exit-intent)
 [![MIT License][mit license]](http://opensource.org/licenses/MIT)
