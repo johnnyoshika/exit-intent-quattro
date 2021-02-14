@@ -19,7 +19,6 @@
     "test": "echo \"Error: no test specified\"",
     "lint": "npm run prettier-eslint -- 'src/**/*.{js,json}'",
     "build": "rollup -c",
-    "postbuild": "cp src/exit-intent.d.ts dist/exit-intent.d.ts",
     "dev": "rollup -c -w",
     "prettier-eslint": "prettier-eslint --write --no-semi --single-quote --no-bracket-spacing",
     "changelog": "standard-version",
