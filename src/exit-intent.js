@@ -15,16 +15,19 @@ export default function ExitIntent (options = {}) {
 
     const addEvent = (eventName, callback) => {
       document.addEventListener(eventName, callback, false)
-      eventListeners.set(`document:${eventName}`, {eventName, callback})
+      eventListeners.set(`document:${eventName}`, {
+        eventName,
+        callback
+      })
     }
 
-    const removeEvent = key => {
+    const removeEvent = (key) => {
       const {eventName, callback} = eventListeners.get(key)
       document.removeEventListener(eventName, callback)
       eventListeners.delete(key)
     }
 
-    const shouldDisplay = position => {
+    const shouldDisplay = (position) => {
       if (position <= config.threshold && displays < config.maxDisplays) {
         displays++
         return true
@@ -32,7 +35,7 @@ export default function ExitIntent (options = {}) {
       return false
     }
 
-    const mouseDidMove = event => {
+    const mouseDidMove = (event) => {
       if (shouldDisplay(event.clientY)) {
         config.onExitIntent()
         if (displays >= config.maxDisplays) {
