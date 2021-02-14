@@ -11,7 +11,6 @@ export default {
   input: 'src/exit-intent.js',
   output: [
     { format: 'es', file: pkg.module },
-    { format: 'es', file: pkg.types },
     { format: 'cjs', file: pkg.main },
     { format: 'umd', file: pkg['umd:main'] },
   ],
