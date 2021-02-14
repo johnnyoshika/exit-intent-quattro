@@ -7,7 +7,7 @@
 [![Size][size]](https://unpkg.com/exit-intent)
 [![Size gzip][size gzip]](https://unpkg.com/exit-intent)
 
-Exit Intent detection library based on [Dan Hayden](https://github.com/danhayden/exit-intent)'s original version. This library builds on top of the original version by adding edge detection on all 4 edges of the viewport instead of just the top.
+Exit Intent detection library based on [Dan Hayden](https://github.com/danhayden/exit-intent)'s original version. This library builds on top of the original version by adding edge detection on all 4 edges of the viewport instead of just the top. TypeScript type declaration is also included.
 
 ## Usage
 
