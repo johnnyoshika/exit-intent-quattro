@@ -1,6 +1,6 @@
 {
   "name": "exit-intent-quattro",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Exit intent detection library - detects all 4 edges.",
   "keywords": [
     "exit",

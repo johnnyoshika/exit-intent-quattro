@@ -25,8 +25,8 @@ const removeExitIntent = exitIntent({
   threshold: 20,
   maxDisplays: 2,
   eventThrottle: 100,
-  onExitIntent: () => {
-    console.log('exit-intent triggered');
+  onExitIntent: ({side, position: {x, y}}) => {
+    console.log(`exit-intent triggered on ${side} side at position ${x}, ${y}`);
   },
 });
 
@@ -49,7 +49,11 @@ maximum number of times to trigger.
 event throttle in milliseconds.
 
 `onExitIntent` (default no-op function)  
-function to call when an exit intent has been detected.
+function to call when an exit intent has been detected. An object will be passed in with these properties (see example above):
+* `side`
+  * string with possible values: `top`, `right`, `bottom`, and `left`
+* `position`
+  * object with `x` and `y` numeric properties indicating the position at which exit intent was detected
 
 ### License
 
