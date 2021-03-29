@@ -39,7 +39,7 @@ export default function ExitIntent (options = {}) {
         displays < config.maxDisplays
       ) {
         displays++
-        return true
+        return 'top'
       }
 
       if (
@@ -48,7 +48,7 @@ export default function ExitIntent (options = {}) {
         displays < config.maxDisplays
       ) {
         displays++
-        return true
+        return 'right'
       }
 
       if (
@@ -57,7 +57,7 @@ export default function ExitIntent (options = {}) {
         displays < config.maxDisplays
       ) {
         displays++
-        return true
+        return 'bottom'
       }
 
       if (
@@ -66,15 +66,22 @@ export default function ExitIntent (options = {}) {
         displays < config.maxDisplays
       ) {
         displays++
-        return true
+        return 'left'
       }
 
       return false
     }
 
     const mouseDidMove = (event) => {
-      if (shouldDisplay(event.clientX, event.clientY)) {
-        config.onExitIntent()
+      const side = shouldDisplay(event.clientX, event.clientY)
+      if (side) {
+        config.onExitIntent({
+          side,
+          position: {
+            x: event.clientX,
+            y: event.clientY
+          }
+        })
         if (displays >= config.maxDisplays) {
           removeEvents()
         }
